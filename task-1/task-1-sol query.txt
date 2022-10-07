@@ -1,0 +1,125 @@
+que.1
+   
+    create database mayank;
+
+
+que.2
+
+
+   create table employee
+(
+  id int  PRIMARY key AUTO_INCREMENT,
+  fristname varchar(155),
+  lastname varchar(155),
+  salary varchar(255),
+  joining_date varchar(255),
+   depertment varchar(255)
+ );
+
+
+que.3
+
+   insert into employee(fristname,lastname,salary,joining_date,depertment)values('mayank','patel','100000','04-02-2015','it'),('jeel','patel','200000','08-05-2017','ec'),
+   ('jeet','dobariya','150000','015-08-2018','banking'),('devang','patel','500000','01-01-2014','hr'),('dhruv','bhanusali','250000','022-06-2014','service'),
+   ('ami','khunt','300000','26-10-2020','itcs'),('kripal','singh','100000','28-09-2021','insurance'),('fena','patel','450000','24-03-2022','it'),
+   ('divyesh','patel','275000','11-12-2017','banking')
+
+
+que.4=Incentives
+
+        CREATE TABLE incentives
+  (
+    incentivid int AUTO_INCREMENT PRIMARY KEY,
+    empid int REFERENCES employee(empid),
+    incentivedate varchar(255),
+    incentive_amount float
+  )
+
+
+ que.4
+
+      INSERT into incentives values
+      ('null','1','1-1-2014','2000'),('null','2','22-06-2014','4000'),('null','3','22-06-2014','4000'),('null','4','1-1-2014','2000'),
+      ('null','5','1-1-2014','2000')
+
+
+ que.5
+
+       SELECT FriSTname as employee_name from employee;
+
+
+que.6 
+
+       SELECT fristname,joining_date FROM employee;
+
+que.7
+
+       SELECT*from employee ORDER by fristname and salary desc;
+
+que.8
+
+
+       SELECT employee.*,incentive_amount from employee JOIN incentives ONempid=incentives.empid where incentive_amount>3000 
+
+
+que.9
+
+
+      SELECT fristname,incentive_amount from employee join incentives on empid=incentives.empid where incentive_amount<3000;
+
+
+que.10
+
+
+      SELECT*from employee where fristname like'a%';
+
+
+que.11
+
+
+      SELECT*from employee where joining_date like'08-05-2017' 
+
+
+que.12
+
+
+
+      SELECT sum (salary), depertment from employee group by depertment ORDER by sum(salary)desc;
+
+
+que.13
+
+
+     SELECT max(salary) FROM employee ORDER by max(salary) asc;
+
+
+que.14
+
+
+
+que.15
+
+
+     SELECT max(salary) from employee where salary < (SELECT max(salary)from employee);
+
+
+que.16
+      
+
+      
+
+
+
+que.17
+
+
+     SELECT fristname,lastname,salary from employee;
+
+
+que.18
+
+
+
+     SELECT depertment, max(salary) from employee GROUP by depertment;
+
+      
